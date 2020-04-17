@@ -21,18 +21,6 @@ body{
     padding: 50px;
 }
 
-.contact, #headerwrap{
-    box-shadow: 0 0 25px #00000030;
-}
-
-.secThree{
-    box-shadow: 0 15px 25px -5px #00000030;
-}
-
-.secTwo{
-    box-shadow: 0 -5px 25px -15px #00000030;
-}
-
 .tab-content{
     box-shadow: 0px 10px 25px #00000017;
 }
@@ -108,6 +96,10 @@ footer{
     text-transform: uppercase;
 }
 
+.contact, #headerwrap{
+    box-shadow: 0 0 25px #00000030;
+}
+
 section{
     padding: 75px 0;
 }
@@ -123,6 +115,7 @@ section .row{
 
 .secTwo{
     background: white;
+    box-shadow: 0 -5px 25px -15px #00000030;
 }
 
 .secTwo h4{
@@ -158,8 +151,9 @@ section .row{
 }
 
 .secThree{
-    background: url(/images/bg2.jpg);
+    background: linear-gradient(to bottom, #8b949c52 0%,#343a4054 100%);
     background-size: cover;
+    box-shadow: 0 25px 25px -15px #00000030;
 }
 
 .secThree .container{
