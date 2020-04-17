@@ -6,7 +6,26 @@ var con = require("../demo_db_connection");
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-  res.render('index', { title: 'Home' });
+
+
+  con.query(`select * from sys.section_one `, function (error, result) {
+    if (error) throw error;
+    var sectionOne = result;
+
+    con.query(`select * from sys.tabs `, function (error, result) {
+
+      if (error) throw error;
+      var tabs = result;
+      res.render('index', { title: 'Home', sectionOne: sectionOne, tabs: tabs });
+    });
+
+
+ });
+
+
+
+
+
 });
 
 router.post('/form', function (req, res) {
@@ -18,6 +37,8 @@ router.post('/form', function (req, res) {
   });
   res.redirect('/');
 });
+
+
 
 router.get('*', function (req, res, next) {
   res.send('not found', 404);
