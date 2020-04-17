@@ -9,22 +9,26 @@
             </div>
             <div class="col-lg-4 no-padding">
                 <h2>Contact</h2>
-                <form>
+                <form action="/form" method="post">
                     <div class="form-group">
                         <label for="exampleInputEmail1">name</label>
-                        <input type="name" class="form-control" id="name" aria-describedby="emailHelp">
+                        <input name="username" type="name" class="form-control" id="name" aria-describedby="emailHelp">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">surname</label>
-                        <input type="surname" class="form-control" id="surname">
+                        <input  name="surname" type="surname" class="form-control" id="surname">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">email</label>
+                        <input  name="email" type="email" class="form-control" id="email">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">subject</label>
-                        <input type="subject" class="form-control" id="subject">
+                        <input name="subject" type="subject" class="form-control" id="subject">
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlTextarea1">message</label>
-                        <textarea class="form-control" id="message" rows="3"></textarea>
+                        <textarea name="message" class="form-control" id="message" rows="3"></textarea>
                     </div>
                     <button type="submit" class="btn btn-dark">Submit</button>
                 </form>
