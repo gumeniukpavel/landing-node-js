@@ -16,6 +16,11 @@ body{
 	z-index: -1;
 }
 
+.tab-pane{
+    background: white;
+    padding: 50px;
+}
+
 .fixed{
     position: fixed;
     width: 100%;
