@@ -21,6 +21,18 @@ body{
     padding: 50px;
 }
 
+.contact, #headerwrap{
+    box-shadow: 0 0 25px #00000030;
+}
+
+.secThree{
+    box-shadow: 0 15px 25px -5px #00000030;
+}
+
+.secTwo{
+    box-shadow: 0 -5px 25px -15px #00000030;
+}
+
 .tab-content{
     box-shadow: 0px 10px 25px #00000017;
 }
