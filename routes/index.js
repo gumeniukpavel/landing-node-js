@@ -8,11 +8,11 @@ var con = require("../demo_db_connection");
 router.get('/', function (req, res, next) {
 
 
-  con.query(`select * from sys.section_one `, function (error, result) {
+  con.query(`select * from landing.section_one `, function (error, result) {
     if (error) throw error;
     var sectionOne = result;
 
-    con.query(`select * from sys.tabs `, function (error, result) {
+    con.query(`select * from landing.tabs `, function (error, result) {
 
       if (error) throw error;
       var tabs = result;
@@ -32,7 +32,7 @@ router.post('/form', function (req, res) {
   var data = req.body;
   con.connect(function (err) {
     if (err) throw err;
-    con.query(`insert into sys.messages (username, surname, subject, email, message) 
+    con.query(`insert into landing.messages (username, surname, subject, email, message) 
                     values ('${data.username}', '${data.surname}', '${data.subject}', '${data.email}', '${data.message}')`);
   });
   res.redirect('/');
