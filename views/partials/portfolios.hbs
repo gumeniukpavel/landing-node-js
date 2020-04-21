@@ -4,28 +4,31 @@
 
         <div class="col-lg-6 ">
             <div class="content " style="padding-left: 15px; padding-top: 15%">
-                <h7>{{sectionOne.subtitle}}</h7>
-                <h3>{{sectionOne.title}}</h3>
+                <h7>{{portfolioSectOne.subtitle}}</h7>
+                <h3>{{portfolioSectOne.title}}</h3>
                 <p class="">
-                    {{sectionOne.text}}
+                    {{portfolioSectOne.text}}
                 </p>
             </div>
         </div>
         <div class="col-lg-6">
-            <img src="{{sectionOne.image}}" alt="" width="100%" >
+            <img src="{{portfolioSectOne.image}}" alt="" width="100%" >
         </div>
 
     </div>
     <div class="row graySection">
         <div class="col-lg-6 order-2 order-lg-1 ">
-            <img src="http://beonepage.shlk.org.ua/wp-content/uploads/2019/11/fragem1.png" alt="" width="100%" >
+            <img src="{{portfolioSectTwo.image}}" alt="" width="100%" >
         </div>
         <div class="col-lg-6 order-1 order-lg-2 ">
             <div class="content" style="padding-left: 15px; padding-top: 15%">
-                <h7>FRAGEMGG</h7>
-                <h3>Игровая платформ</h3>
+                <h3>Переваги</h3>
                 <p class="">
-                    Платформа, где Вы можете проверить свои силы и посоревноваться с другими игроками CS GO.
+                {{#each portfolioSectTwo.items}}
+                   - {{this}}
+                    <br>
+                {{/each}}
+
                 </p>
             </div>
         </div>

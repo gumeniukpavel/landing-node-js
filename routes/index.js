@@ -5,38 +5,70 @@ var con = require("../demo_db_connection");
 
 
 /* GET home page. */
-router.get('/', function (req, res, next) {
+router.get('/', async function (req, res, next) {
 
-  con.query(`select * from section_one `, function (error, result) {
-    if (error) throw error;
-    var sectionOne = result;
-
-    con.query(`select * from tabs `, function (error, result) {
-
-      if (error) throw error;
-      var tabs = result;
-      res.render('index', {title: 'Home', sectionOne: sectionOne, tabs: tabs});
+  var tabs = await (new Promise((resolve, reject) => {
+    con.query(`select * from tabs`, function (error, result) {
+      if (error) {
+        reject(error);
+      }
+      resolve(result);
     });
-  });
+  }));
+
+  var sectionOne = await (new Promise((resolve, reject) => {
+    con.query(`select * from section_one`, function (error, result) {
+      if (error) {
+        reject(error);
+      }
+      resolve(result);
+    });
+  }));
+
+  res.render('index', {title: 'Home', sectionOne: sectionOne, tabs: tabs});
 });
 
 
-router.get('/portfolio/:code', function (req, res, next) {
+router.get('/portfolio/:code', async function (req, res, next) {
   var code =  req.params.code;
-  con.query(`select * from portfolio where urlcode = '${code}' limit 1`, function (error, result) {
-    if (error) throw error;
-    if(result.length>0){
-      var portfolioData = result[0];
-      con.query(`select * from portfolio_sect_one where portfolio_id  = ${portfolioData.id}`, function (error, result) {
-        var sectionOne = result[0];
-        res.render('portfolio', { title: 'Portfolio' ,sectionOne: sectionOne });
-      });
-    }
-    else {
-      res.send('not found', 404);
-    }
-  });
- console.log(req.params.portfolioName);
+  var portfolioData = await (new Promise((resolve, reject) => {
+    con.query(`select * from portfolio where urlcode = '${code}' limit 1`, function (error, result) {
+      if (error) {
+        reject(error);
+      }
+      resolve(result);
+    });
+  }));
+
+  if (portfolioData.length == 0){
+    res.send('not found', 404);
+  }else {
+    portfolioData = portfolioData[0];
+  }
+
+
+  var portfolioSectOne = await (new Promise((resolve, reject) => {
+    con.query(`select * from portfolio_sect_one where portfolio_id  = ${portfolioData.id}`, function (error, result) {
+      if (error) {
+        reject(error);
+      }
+      resolve(result[0]);
+    });
+  }));
+
+  var portfolioSectTwo = await (new Promise((resolve, reject) => {
+    con.query(`select * from portfolio_sect_two where portfolio_id  = ${portfolioData.id}`, function (error, result) {
+      if (error) {
+        reject(error);
+      }
+      resolve(result[0]);
+    });
+  }));
+
+  portfolioSectTwo.items = portfolioSectTwo.items.split(',');
+  res.render('portfolio', { title: 'Portfolio', portfolioSectOne: portfolioSectOne, portfolioSectTwo: portfolioSectTwo });
+
+  console.log(req.params.portfolioName);
 
 
 });
@@ -49,7 +81,8 @@ router.post('/form', function (req, res) {
     con.query(`insert into messages (username, surname, subject, email, message)
                     values ('${data.username}', '${data.surname}', '${data.subject}', '${data.email}', '${data.message}')`);
   });
-  res.redirect('/');
+
+      res.redirect('/');
 });
 
 
