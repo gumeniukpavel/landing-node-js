@@ -46,7 +46,7 @@ router.post('/form', function (req, res) {
   var data = req.body;
   con.connect(function (err) {
     if (err) throw err;
-    con.query(`insert into messages (username, surname, subject, email, message) 
+    con.query(`insert into messages (username, surname, subject, email, message)
                     values ('${data.username}', '${data.surname}', '${data.subject}', '${data.email}', '${data.message}')`);
   });
   res.redirect('/');
