@@ -25,7 +25,16 @@ router.get('/', async function (req, res, next) {
     });
   }));
 
-  res.render('index', {title: 'Home', sectionOne: sectionOne, tabs: tabs});
+  var portfolio = await (new Promise((resolve, reject) => {
+    con.query(`select * from portfolio`, function (error, result) {
+      if (error) {
+        reject(error);
+      }
+      resolve(result);
+    });
+  }));
+  console.log(portfolio);
+  res.render('index', {title: 'Home', sectionOne: sectionOne, tabs: tabs, portfolio: portfolio});
 });
 
 
@@ -65,8 +74,17 @@ router.get('/portfolio/:code', async function (req, res, next) {
     });
   }));
 
+  var portfolioSectThree = await (new Promise((resolve, reject) => {
+    con.query(`select * from portfolio_sect_three where portfolio_id  = ${portfolioData.id}`, function (error, result) {
+      if (error) {
+        reject(error);
+      }
+      resolve(result[0]);
+    });
+  }));
+
   portfolioSectTwo.items = portfolioSectTwo.items.split(',');
-  res.render('portfolio', { title: 'Portfolio', portfolioSectOne: portfolioSectOne, portfolioSectTwo: portfolioSectTwo });
+  res.render('portfolio', { title: 'Portfolio', portfolioSectOne: portfolioSectOne, portfolioSectTwo: portfolioSectTwo, portfolioSectThree: portfolioSectThree });
 
   console.log(req.params.portfolioName);
 

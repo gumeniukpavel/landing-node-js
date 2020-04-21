@@ -1,0 +1,15 @@
+
+<section class="portfolio graySection">
+    <div class="container">
+        <div class="row centered align-items-center justify-content-center">
+                {{#each portfolio}}
+                    <div class="col-lg-2 fadein">
+                        <a href="/portfolio/{{this.urlcode}}"><img src="{{this.min_image}}" alt="" style="width: 100%"></a>
+                        <h4>{{this.title}}</h4>
+                        <p>{{this.text}}</p>
+                    </div>
+
+                {{/each}}
+        </div>
+    </div>
+</section>
