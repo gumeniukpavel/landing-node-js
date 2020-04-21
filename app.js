@@ -13,11 +13,13 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.engine("hbs", expressHbs(
   {
-      layoutsDir: "views/layouts", 
+      layoutsDir: "views/layouts",
       defaultLayout: "base",
       extname: "hbs"
   }
 ))
+
+
 app.set("view engine", "hbs");
 hbs.registerPartials(__dirname + "/views/partials");
 

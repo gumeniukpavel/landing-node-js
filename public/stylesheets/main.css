@@ -151,8 +151,6 @@ section .row{
 }
 
 .secThree{
-    background: linear-gradient(to bottom, #8b949c52 0%,#343a4054 100%);
-    background-size: cover;
     box-shadow: 0 25px 25px -15px #00000030;
 }
 
@@ -206,4 +204,11 @@ section .row{
 
 @keyframes bounceleft {
     from { margin-left: -2000px; }
+}
+
+.portfolio div{
+    padding: 0px;
+}
+.graySection{
+    background: linear-gradient(to bottom, #8b949c52 0%,#343a4054 100%);
 }
