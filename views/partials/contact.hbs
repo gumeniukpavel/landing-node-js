@@ -1,38 +1,49 @@
-<div class="contact">
-    <div class="container-fluid no-padding">
+<section class="contact">
+    <div class="container">
         <div class="row centered align-items-center">
-            <div class="col-lg-8 no-padding">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d48338.238780422136!2d30.56169608008266!3d50.45105150625362!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sua!4v1586957566189!5m2!1sru!2sua"
-                    width="100%" height="750px" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
-                    tabindex="0"></iframe>
-            </div>
-            <div class="col-lg-4 no-padding">
-                <h2>Contact</h2>
+            <div class="col-lg-6 offset-lg-3">
+                <h2>Напишите нам</h2>
+                <h6>Вы можете отправить свой вопрос в форме ниже</h6>
                 <form action="/form" method="post">
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">name</label>
-                        <input name="username" type="name" class="form-control" id="name" aria-describedby="emailHelp">
+                    <div class="row">
+                        <div class="col-lg-5">
+                            <div class="input-group mb-3">
+                              <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1">Имя</span>
+                              </div>
+                              <input type="text" class="form-control" name="name" aria-label="name" aria-describedby="basic-addon1">
+                            </div>
+                        </div>
+                        <div class="col-lg-7">
+                            <div class="input-group mb-3">
+                              <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon2">Фамилия</span>
+                              </div>
+                              <input type="text" class="form-control" name="surname" aria-label="surname" aria-describedby="basic-addon2">
+                            </div>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">surname</label>
-                        <input  name="surname" type="surname" class="form-control" id="surname">
+                    <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon3">E-mail</span>
+                      </div>
+                      <input type="text" class="form-control" name="email" aria-label="email" aria-describedby="basic-addon3">
                     </div>
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">email</label>
-                        <input  name="email" type="email" class="form-control" id="email">
+                    <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon4">Тема сообщения</span>
+                      </div>
+                      <input type="text" class="form-control" name="subject" aria-label="subject" aria-describedby="basic-addon4">
                     </div>
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">subject</label>
-                        <input name="subject" type="subject" class="form-control" id="subject">
+                    <div class="input-group mb-3">
+                      <div class="input-group-prepend textarea">
+                        <span class="input-group-text textarea" id="basic-addon5">Cообщение</span>
+                      </div>
+                      <textarea rows="5" class="form-control" name="message" aria-label="message" aria-describedby="basic-addon5"></textarea>
                     </div>
-                    <div class="form-group">
-                        <label for="exampleFormControlTextarea1">message</label>
-                        <textarea name="message" class="form-control" id="message" rows="3"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-dark">Submit</button>
+                    <button type="submit" class="btn btn-dark">Отправить</button>
                 </form>
             </div>
         </div>
     </div>
-</div>
+</section>

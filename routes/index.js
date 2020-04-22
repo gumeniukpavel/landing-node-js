@@ -84,7 +84,7 @@ router.get('/portfolio/:code', async function (req, res, next) {
   }));
 
   portfolioSectTwo.items = portfolioSectTwo.items.split(',');
-  res.render('portfolio', { title: 'Portfolio','portfolioData': portfolioData, portfolioSectOne: portfolioSectOne, portfolioSectTwo: portfolioSectTwo, portfolioSectThree: portfolioSectThree });
+  res.render('portfolio', { title: portfolioData.title ,'portfolioData': portfolioData, portfolioSectOne: portfolioSectOne, portfolioSectTwo: portfolioSectTwo, portfolioSectThree: portfolioSectThree });
 
 
   console.log(req.params.portfolioName);

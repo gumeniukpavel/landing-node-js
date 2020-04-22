@@ -1,3 +1,40 @@
+$(window).scroll(function () {
+    if( $(this).scrollTop() > 200){
+        $('.navbar').removeClass('navbar-dark');
+        $('.navbar').addClass('navbar-light');
+        $('.main-menu').removeClass('main-menu-light');
+        $('.main-menu').addClass('main-menu-dark');
+        $('.logo-light').addClass('hide-logo');
+        $('.logo-dark').removeClass('hide-logo');
+    }else{
+        $('.main-menu').removeClass('main-menu-dark');
+        $('.main-menu').addClass('main-menu-light');
+        $('.navbar').removeClass('navbar-light');
+        $('.navbar').addClass('navbar-dark');
+        $('.logo-dark').addClass('hide-logo');
+        $('.logo-light').removeClass('hide-logo');
+    }
+});
+
+$(window).ready(function () {
+    if( $(this).scrollTop() > 200){
+        $('.navbar').removeClass('navbar-dark');
+        $('.navbar').addClass('navbar-light');
+        $('.main-menu').removeClass('main-menu-light');
+        $('.main-menu').addClass('main-menu-dark');
+        $('.logo-light').addClass('hide-logo');
+        $('.logo-dark').removeClass('hide-logo');
+    }else{
+        $('.main-menu').removeClass('main-menu-dark');
+        $('.main-menu').addClass('main-menu-light');
+        $('.navbar').removeClass('navbar-light');
+        $('.navbar').addClass('navbar-dark');
+        $('.logo-dark').addClass('hide-logo');
+        $('.logo-light').removeClass('hide-logo');
+    }
+    console.log($(this).scrollTop());
+})
+
 var el = $('.secTwo');
 
 $(window).scroll(function () {
@@ -11,13 +48,13 @@ $(window).scroll(function () {
     }
 });
 
-var el2 = $('.secThree');
-
-$(window).scroll(function () {
-    if ($(this).scrollTop() > el2.offset().top - 700) {
-        el2.find('.container').addClass("show");
-    }
-});
+// var el2 = $('.secThree');
+//
+// $(window).scroll(function () {
+//     if ($(this).scrollTop() > el2.offset().top - 700) {
+//         el2.find('.container').addClass("show");
+//     }
+// });
 
 let resizeReset = function () {
     w = canvasBody.width = window.innerWidth;
@@ -25,9 +62,9 @@ let resizeReset = function () {
 }
 
 const opts = {
-    particleColor: "rgb(0,0,0)",
-    lineColor: "rgb(200,200,200)",
-    particleAmount: 70,
+    particleColor: "rgb(0,0,0,0.1)",
+    lineColor: "rgb(200,200,200,0.1)",
+    particleAmount: 50,
     defaultSpeed: 1,
     variantSpeed: 1,
     defaultRadius: 2,

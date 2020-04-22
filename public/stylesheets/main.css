@@ -5,7 +5,22 @@ html, body{
 body{
     -webkit-overflow-scrolling: touch;
     background: #e0e0e04f;
-    position: relative
+    position: relative;
+    font-family: 'Nunito', sans-serif;
+}
+
+.input-group-text{
+    background: linear-gradient(to top left, #58807c26 0%,#b0fff878 100%);
+}
+
+.textarea{
+    display: block;
+    width: 100%;
+    border-radius: 0;
+}
+
+textarea{
+    border-radius: 0 0 .25rem .25rem !important;
 }
 
 #canvas {
@@ -14,6 +29,7 @@ body{
 	top: 0;
 	left: 0;
 	z-index: -1;
+    filter: blur(1px);
 }
 
 .tab-pane{
@@ -50,9 +66,8 @@ body{
 }
 
 .contact{
-    background: white;
+    background: #ffffff8a;
     margin-bottom: 60px;
-    padding: 0;
 }
 
 .no-padding{
@@ -63,11 +78,51 @@ body{
     margin: 25px;
 }
 
+.custom-shadow{
+    box-shadow: 0 0 10px  #0000006b;
+}
+
+@media (min-width: 768px){
+    .portfolio div{
+        padding: 50px;
+    }
+    .portfolio-text-block{
+        padding: 50px;
+    }
+    .portfolio img:hover{
+        transform: scale(1.25);
+        transition: transform 1s;
+    }
+}
+.headerwrap-col{
+    padding: 25px;
+}
+
+#headerwrap h1{
+    margin-top: 100px;
+    font-size: 70px;
+    color: white;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+@media (max-width: 425px) {
+    #headerwrapPortfolio h1{
+        font-size: 50px;
+    }
+}
+
+@media (min-width: 425px) {
+    #headerwrapPortfolio h1{
+        font-size: 70px;
+    }
+}
+
+
 .portfolio-text-block{
     background: #0000008c;
     box-shadow: 0px 0px 50px 25px rgba(0,0,0,0.5);
     border-radius: 15px;
-    padding: 50px;
     margin-top: 150px;
 }
 
@@ -91,7 +146,8 @@ footer{
 }
 
 #headerwrap{
-    background: url('/images/background.jpg') no-repeat center top;
+    color: white;
+    background: linear-gradient(to bottom right, #58807cc7 0%,#b0fff8e3 100%);;
     padding-top: 20px;
     text-align: center;
     background-position: center;
@@ -100,41 +156,25 @@ footer{
     background-size: cover;
 }
 
-#headerwrap h1{
-    margin-top: 150px;
-    font-size: 70px;
-    color: black;
-    font-weight: 700;
-    letter-spacing: 3px;
-}
 #headerwrapPortfolio h1{
-    font-size: 70px;
     color: white;
     font-weight: 700;
     letter-spacing: 3px;
 }
 
 .portfolio img{
-    box-shadow: 0px 0px 15px black;
+    box-shadow: 0px 0px 15px #0000006b;
 }
 
-#headerwrap h2, #headerwrapPortfolio h2{
+#headerwrap h2{
     font-size: 40px;
     color: white;
     font-weight: 400;
     text-transform: uppercase;
 }
 
-.contact, #headerwrap{
-    box-shadow: 0 0 25px #00000030;
-}
-
 section{
     padding: 75px 0;
-}
-
-section .row{
-    min-height: 250px;
 }
 
 .secOne img{
@@ -143,15 +183,41 @@ section .row{
 }
 
 .secTwo{
-    background: white;
-    box-shadow: 0 -5px 25px -15px #00000030;
+    background: linear-gradient(to top right, #58807c52 0%,#b0fff8a6 100%);
+}
+
+.secTwo li{
+    background: none;
+}
+
+.secTwo .list-group-item{
+    padding: 5px;
+}
+
+.secTwo .white-color{
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    background-color: #58807C;
+    border-radius: 100%;
+    position: absolute;
+    line-height: 22px;
+    text-align: center;
+    color: white;
+}
+
+.secTwo .white-color svg{
+    width: 1em;
+}
+
+.secTwo .list-item{
+    padding-left: 45px;
+    font-weight: 600;
 }
 
 .secTwo h4{
     animation-duration: 5s;
-    font-size: 50px;
-    font-weight: 500;
-    letter-spacing: 2px;
+    font-weight: 700;
 }
 
 .secTwo ul {
@@ -235,9 +301,20 @@ section .row{
     from { margin-left: -2000px; }
 }
 
-.portfolio div{
-    padding: 50px;
-}
 .graySection{
-    background: linear-gradient(to bottom, #8b949c52 0%,#343a4054 100%);
+    background: linear-gradient(to bottom right, #58807c52 0%,#b0fff8a6 100%)
+}
+
+.main-menu-light{
+    background: none;
+    box-shadow: none;
+}
+
+.hide-logo{
+    display: none !important;
+}
+
+.main-menu-dark{
+    background: white;
+    box-shadow: 0px 10px 25px #0000006b;
 }
