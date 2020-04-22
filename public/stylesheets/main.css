@@ -101,6 +101,10 @@ textarea{
         transform: scale(1.25);
         transition: transform 1s;
     }
+    .portfolio img{
+        transform: scale(1);
+        transition: transform 1s;
+    }
 }
 .headerwrap-col{
     padding: 25px;
@@ -150,13 +154,18 @@ footer{
 }
 
 #headerwrapPortfolio{
-    padding-top: 100px;
     text-align: center;
-    background-position: center;
-    min-height: 700px;
+    min-height: 500px;
+    position: absolute;
+    top: 0;
     width: 100%;
-    background-size: cover;
     box-shadow: inset 1000px 1000px 1000px 1000px rgba(0, 0, 0, 0.5);
+}
+
+#headerwrapPortfolioBackground{
+    min-height: 500px;
+    width: 100%;
+    filter: blur(10px);
 }
 
 #headerwrap{
@@ -174,6 +183,10 @@ footer{
     color: white;
     font-weight: 700;
     letter-spacing: 3px;
+}
+
+#headerwrapPortfolio a{
+    text-decoration-color: white;
 }
 
 .portfolio img{
