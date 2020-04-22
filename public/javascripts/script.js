@@ -35,7 +35,7 @@ $(window).ready(function () {
     console.log($(this).scrollTop());
 })
 
-var el = $('.secTwo');
+var el = $('.process');
 
 $(window).scroll(function () {
     if ($(this).scrollTop() > el.offset().top - 500) {
