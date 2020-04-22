@@ -55,7 +55,17 @@ $(window).scroll(function () {
 //         el2.find('.container').addClass("show");
 //     }
 // });
-
+$(function() {
+    // Owl Carousel
+    var owl = $(".owl-carousel");
+    owl.owlCarousel({
+        items: 5,
+        margin: 10,
+        loop: true,
+        autoplay: true,
+        autoplayTimeout: 5000,
+    });
+});
 let resizeReset = function () {
     w = canvasBody.width = window.innerWidth;
     h = canvasBody.height = window.innerHeight;

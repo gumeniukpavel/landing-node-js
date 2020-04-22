@@ -85,23 +85,15 @@ router.get('/portfolio/:code', async function (req, res, next) {
 
   portfolioSectTwo.items = portfolioSectTwo.items.split(',');
   res.render('portfolio', { title: portfolioData.title ,'portfolioData': portfolioData, portfolioSectOne: portfolioSectOne, portfolioSectTwo: portfolioSectTwo, portfolioSectThree: portfolioSectThree });
-
-
-  console.log(req.params.portfolioName);
-
-
 });
 
 
 router.post('/form', function (req, res) {
   var data = req.body;
-  con.connect(function (err) {
-    if (err) throw err;
-    con.query(`insert into messages (username, surname, subject, email, message)
-                    values ('${data.username}', '${data.surname}', '${data.subject}', '${data.email}', '${data.message}')`);
-  });
+  con.query(`insert into messages (username, surname, subject, email, message)
+                  values ('${data.username}', '${data.surname}', '${data.subject}', '${data.email}', '${data.message}')`);
 
-      res.redirect('/');
+  res.redirect('/');
 });
 
 
