@@ -7,17 +7,8 @@ var con = require("../demo_db_connection");
 /* GET home page. */
 router.get('/', async function (req, res, next) {
 
-  var tabs = await (new Promise((resolve, reject) => {
-    con.query(`select * from tabs`, function (error, result) {
-      if (error) {
-        reject(error);
-      }
-      resolve(result);
-    });
-  }));
-
-  var sectionOne = await (new Promise((resolve, reject) => {
-    con.query(`select * from section_one`, function (error, result) {
+  var advantage = await (new Promise((resolve, reject) => {
+    con.query(`select * from advantage`, function (error, result) {
       if (error) {
         reject(error);
       }
@@ -33,8 +24,8 @@ router.get('/', async function (req, res, next) {
       resolve(result);
     });
   }));
-  console.log(portfolio);
-  res.render('index', {title: 'Home', sectionOne: sectionOne, tabs: tabs, portfolio: portfolio});
+
+  res.render('index', {title: 'Home', advantage: advantage,  portfolio: portfolio});
 });
 
 
