@@ -16,6 +16,15 @@ router.get('/', async function (req, res, next) {
     });
   }));
 
+  var technology = await (new Promise((resolve, reject) => {
+    con.query(`select * from technology`, function (error, result) {
+      if (error) {
+        reject(error);
+      }
+      resolve(result);
+    });
+  }));
+
   var portfolio = await (new Promise((resolve, reject) => {
     con.query(`select * from portfolio`, function (error, result) {
       if (error) {
@@ -25,7 +34,7 @@ router.get('/', async function (req, res, next) {
     });
   }));
 
-  res.render('index', {title: 'Home', advantage: advantage,  portfolio: portfolio});
+  res.render('index', {title: 'Home', advantage: advantage,  portfolio: portfolio, technology: technology});
 });
 
 

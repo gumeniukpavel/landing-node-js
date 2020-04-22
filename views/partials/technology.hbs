@@ -3,12 +3,10 @@
         <div class="row centered align-items-center">
             <div class="col-lg-12">
                 <div class="owl-carousel">
-                  <div><img src="http://beonepage.shlk.org.ua/wp-content/uploads/2020/03/php_PNG12-300x189.png"/></div>
-                  <div><img src="http://beonepage.shlk.org.ua/wp-content/uploads/2020/04/HTML5-CSS3.jpg"/></div>
-                  <div><img src="http://beonepage.shlk.org.ua/wp-content/uploads/2020/03/03a203deee86e43d13f4a61ec66459b2.png"/></div>
-                  <div><img src="http://beonepage.shlk.org.ua/wp-content/uploads/2020/03/javascript-logo.png"/></div>
-                  <div><img src="http://beonepage.shlk.org.ua/wp-content/uploads/2020/03/nodejs-e1585683573661.png"/></div>
-                  <div><img src="http://beonepage.shlk.org.ua/wp-content/uploads/2020/03/python-logo-e1585683022728.png"/></div>
+                    {{#each technology}}
+                        <div><img src="/images/{{this.image_url}}" alt="{{this.name}}"></div>
+                    {{/each}}
+
                 </div>
                 <ul class="nav nav-tabs" id="myTab" role="tablist">
                     {{#each tabs}}
