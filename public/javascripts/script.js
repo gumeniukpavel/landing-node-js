@@ -59,11 +59,31 @@ $(function() {
     // Owl Carousel
     var owl = $(".owl-carousel");
     owl.owlCarousel({
-        items: 5,
-        margin: 10,
+        // items: 5,
+        // margin: 10,
         loop: true,
         autoplay: true,
         autoplayTimeout: 5000,
+        responsive : {
+            // breakpoint from 768 up
+            0 : {
+                items: 3,
+                margin: 5,
+            },
+            // breakpoint from 768 up
+            768 : {
+                items: 4,
+                margin: 7,
+            },
+            // breakpoint from 992 up
+
+            // breakpoint from 1300 up
+            1300 : {
+                items: 5,
+                margin: 10,
+            },
+
+        }
     });
 });
 let resizeReset = function () {
@@ -158,6 +178,7 @@ function setup() {
     }
     window.requestAnimationFrame(loop);
 }
+
 
 function loop() {
     window.requestAnimationFrame(loop);
