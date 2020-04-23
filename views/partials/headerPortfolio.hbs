@@ -1,12 +1,14 @@
-<div id="headerwrapPortfolioBackground" style="background: url('{{ portfolioData.main_image }}')">
+<div id="headerwrapPortfolioBackground" style="background: url('/images/{{ portfolioData.urlcode }}/{{ portfolioData.main_image }}');
+        background-size: cover;
+        background-position: center;">
 
 </div>
 <div id="headerwrapPortfolio">
     <div class="container">
         <div class="row centered align-items-center">
-            <div class="col-lg-8 offset-lg-2 bounceleft">
+            <div class="col-lg-8 offset-lg-2 fadein">
                 <div class="portfolio-text-block">
-                    <a href='http://{{ portfolioData.urlproject }}''><h1>{{ portfolioData.title }}</h1></a>
+                    <img src="/images/{{portfolioData.urlcode}}/{{ portfolioData.min_image }}" alt="" width="200px" height="200px">
                 </div>
             </div>
         </div>
