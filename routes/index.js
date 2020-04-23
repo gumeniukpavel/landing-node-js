@@ -34,7 +34,7 @@ router.get('/', async function (req, res, next) {
     });
   }));
 
-  res.render('index', {title: 'Home', advantage: advantage,  portfolio: portfolio, technology: technology});
+  res.render('index', {title: 'DFG Studio', advantage: advantage,  portfolio: portfolio, technology: technology});
 });
 
 
@@ -84,7 +84,7 @@ router.get('/portfolio/:code', async function (req, res, next) {
   }));
 
   portfolioSectTwo.items = portfolioSectTwo.items.split(',');
-  res.render('portfolio', { title: portfolioData.title ,'portfolioData': portfolioData, portfolioSectOne: portfolioSectOne, portfolioSectTwo: portfolioSectTwo, portfolioSectThree: portfolioSectThree });
+  res.render('portfolio', { title: portfolioData.title + ' - DFG Studio','portfolioData': portfolioData, portfolioSectOne: portfolioSectOne, portfolioSectTwo: portfolioSectTwo, portfolioSectThree: portfolioSectThree });
 });
 
 

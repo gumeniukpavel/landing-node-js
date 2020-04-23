@@ -86,10 +86,11 @@ $(function() {
         }
     });
 });
+
 let resizeReset = function () {
     w = canvasBody.width = window.innerWidth;
     h = canvasBody.height = window.innerHeight;
-}
+};
 
 const opts = {
     particleColor: "rgb(0,0,0,0.1)",

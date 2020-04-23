@@ -2,44 +2,36 @@
     <div class="row centered">
 
         <div class="col-lg-6 align-self-center">
-                <h7>{{portfolioSectOne.subtitle}}</h7>
-                <h3>{{portfolioSectOne.title}}</h3>
-                <p class="">
-                    {{portfolioSectOne.text}}
-                </p>
+            <h4>{{portfolioSectOne.subtitle}}</h4>
+            <h2>{{portfolioSectOne.title}}</h2>
+            <p class="">
+                {{portfolioSectOne.text}}
+            </p>
         </div>
         <div class="col-lg-6">
-            <img src="{{portfolioSectOne.image}}" alt="" width="100%" >
+            <img src="/images/{{ portfolioData.urlcode }}/{{portfolioSectOne.image}}" alt="" width="100%" >
         </div>
-
     </div>
     <div class="row graySection centered">
         <div class="col-lg-6 order-2 order-lg-1 ">
-            <img src="{{portfolioSectTwo.image}}" alt="" width="100%" >
+            <img src="/images/{{ portfolioData.urlcode }}/{{portfolioSectTwo.image}}" alt="" width="100%" >
         </div>
         <div class="col-lg-6 order-1 order-lg-2 align-self-center">
-                <h3>Переваги</h3>
-                <p class="">
+            <h3>Технологии</h3>
+            <p class="">
                 {{#each portfolioSectTwo.items}}
                    - {{this}}
                     <br>
                 {{/each}}
-
-                </p>
+            </p>
         </div>
-
     </div>
     <div class="row centered">
-            <div class="col-lg-6 align-self-center">
-                <h7>{{portfolioSectThree.subtitle}}</h7>
-                <h3>{{portfolioSectThree.title}}</h3>
-                <p class="">
-                    {{portfolioSectThree.text}}
-                </p>
-            </div>
-            <div class="col-lg-6">
-                <img src="{{portfolioSectThree.image}}" alt="" width="100%" >
-            </div>
-
+        <div class="col-lg-6">
+            <img src="/images/{{ portfolioData.urlcode }}/{{portfolioSectThree.image_1}}" alt="" width="100%" >
         </div>
+        <div class="col-lg-6">
+            <img src="/images/{{ portfolioData.urlcode }}/{{portfolioSectThree.image_2}}" alt="" width="100%" >
+        </div>
+    </div>
 </div>
