@@ -1,7 +1,8 @@
 var mysql = require('mysql');
 
 var con = mysql.createConnection({
-    host: "localhost",
+    host: 'dfg-studio.com',
+    port : 3306,
     user: "root",
     password: "root",
     database: 'landing'
