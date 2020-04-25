@@ -49,7 +49,7 @@ $(window).scroll(function () {
 });
 
 $(document).ready(function(){
-    $(".main-menu").on("click","a", function (event) {
+    $(".navbar-nav").on("click","a", function (event) {
         event.preventDefault();
         var id  = $(this).attr('href'),
             top = $(id).offset().top;
