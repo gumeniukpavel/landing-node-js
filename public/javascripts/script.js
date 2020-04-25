@@ -48,6 +48,16 @@ $(window).scroll(function () {
     }
 });
 
+$(document).ready(function(){
+    $(".main-menu").on("click","a", function (event) {
+        event.preventDefault();
+        var id  = $(this).attr('href'),
+            top = $(id).offset().top;
+
+        $('body,html').animate({scrollTop: top - 75}, 1500);
+    });
+});
+
 // var el2 = $('.secThree');
 //
 // $(window).scroll(function () {
