@@ -1,11 +1,10 @@
 var mysql = require('mysql');
 
 var con = mysql.createConnection({
-    host: 'dfg-studio.com',
-    port : 3306,
+    host: 'localhost',
     user: "root",
-    password: "root",
-    database: 'landing'
+    password: "dfgstudio2020",
+    database: 'dfg'
 });
 
 
