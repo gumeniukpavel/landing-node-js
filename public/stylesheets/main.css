@@ -106,6 +106,13 @@ textarea{
         transition: transform 1s;
     }
 }
+
+@media (max-width: 768px) {
+    #headerwrap h1{
+        margin-top: 150px !important;
+    }
+}
+
 .headerwrap-col{
     padding: 25px;
 }
