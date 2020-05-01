@@ -4,7 +4,7 @@ var con = require("../demo_db_connection");
 const TelegramBot = require('node-telegram-bot-api');
 const token = '1158589755:AAE3iN8wYOFi2Vxv-tNmK_YLVdkdzhKy_Y4';
 const bot = new TelegramBot(token, {polling: true});
-const chatIds = [244203169, 379182131];
+const chatIds = [244203169, 379182131, 279118447];
 var messageOptions = {
   parse_mode: "markdown"
 };
