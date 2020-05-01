@@ -58,6 +58,20 @@ $(document).ready(function(){
     });
 });
 
+$('#my_form').submit(function(){
+    $.post(
+        '/form',
+        $("#my_form").serialize(),
+
+        function(msg) {
+            $('#my_form')[0].reset();
+            $html = $('#my_form').html();
+            $('#my_form').html(msg + $html);
+        }
+    );
+    return false;
+});
+
 // var el2 = $('.secThree');
 //
 // $(window).scroll(function () {
