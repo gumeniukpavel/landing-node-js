@@ -5,11 +5,12 @@
                 <h2>Напишите нам</h2>
                 <h6>Вы можете отправить свой вопрос в форме ниже</h6>
                 <form id="my_form" action="/form" method="post">
+                    <div id="form_mess"></div>
                     <div class="row">
                         <div class="col-lg-5">
                             <div class="input-group mb-3">
                               <div class="input-group-prepend">
-                                <span class="input-group-text" id="basic-addon1">Имя</span>
+                                <span class="input-group-text" id="basic-addon1">Имя *</span>
                               </div>
                               <input type="text" class="form-control" name="name" aria-label="name" aria-describedby="basic-addon1">
                             </div>
@@ -17,7 +18,7 @@
                         <div class="col-lg-7">
                             <div class="input-group mb-3">
                               <div class="input-group-prepend">
-                                <span class="input-group-text" id="basic-addon2">Фамилия</span>
+                                <span class="input-group-text" id="basic-addon2">Фамилия *</span>
                               </div>
                               <input type="text" class="form-control" name="surname" aria-label="surname" aria-describedby="basic-addon2">
                             </div>
@@ -25,7 +26,7 @@
                     </div>
                     <div class="input-group mb-3">
                       <div class="input-group-prepend">
-                        <span class="input-group-text" id="basic-addon3">E-mail</span>
+                        <span class="input-group-text" id="basic-addon3">E-mail *</span>
                       </div>
                       <input type="text" class="form-control" name="email" aria-label="email" aria-describedby="basic-addon3">
                     </div>
@@ -37,10 +38,11 @@
                     </div>
                     <div class="input-group mb-3">
                       <div class="input-group-prepend textarea">
-                        <span class="input-group-text textarea" id="basic-addon5">Cообщение</span>
+                        <span class="input-group-text textarea" id="basic-addon5">Cообщение *</span>
                       </div>
                       <textarea rows="5" class="form-control" name="message" aria-label="message" aria-describedby="basic-addon5"></textarea>
                     </div>
+                    <p>* отмечены обьязательные поля</p>
                     <button type="submit" class="btn btn-dark">Отправить</button>
                 </form>
             </div>

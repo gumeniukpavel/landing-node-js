@@ -5,6 +5,9 @@ const TelegramBot = require('node-telegram-bot-api');
 const token = '1158589755:AAE3iN8wYOFi2Vxv-tNmK_YLVdkdzhKy_Y4';
 const bot = new TelegramBot(token, {polling: true});
 const chatIds = [244203169];
+var messageOptions = {
+  parse_mode: "markdown"
+};
 
 router.get('/', async function (req, res, next) {
   var advantage = await (new Promise((resolve, reject) => {
@@ -96,12 +99,12 @@ router.post('/form', function (req, res) {
   }else{
     for (let i = 0; i < chatIds.length; i++) {
       bot.sendMessage(chatIds[i],
-    `Новая заявка с сайта!
-        Имя: ${data.name} 
-        Фамилия: ${data.surname} 
-        Тема: ${data.subject}
-        E-mail: ${data.email} 
-        Сообщение: ${data.message}`);
+    `*Новая заявка с сайта!*
+      *Имя:* ${data.name} 
+      *Фамилия:* ${data.surname} 
+      *Тема:* ${data.subject}
+      *E-mail:* ${data.email} 
+      *Сообщение:* ${data.message}`, messageOptions);
     }
     con.query(`insert into messages (username, surname, subject, email, message)
                   values ('${data.name}', '${data.surname}', '${data.subject}', '${data.email}', '${data.message}')`);

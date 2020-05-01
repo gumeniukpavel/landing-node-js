@@ -65,8 +65,7 @@ $('#my_form').submit(function(){
 
         function(msg) {
             $('#my_form')[0].reset();
-            $html = $('#my_form').html();
-            $('#my_form').html(msg + $html);
+            $('#form_mess').html(msg);
         }
     );
     return false;
