@@ -4,7 +4,8 @@ var con = mysql.createConnection({
     host: 'localhost',
     user: "root",
     password: "dfgstudio2020",
-    database: 'dfg'
+    database: 'dfg',
+    charset: "utf8_general_ci"
 });
 
 

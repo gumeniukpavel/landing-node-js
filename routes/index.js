@@ -9,6 +9,41 @@ var messageOptions = {
   parse_mode: "markdown"
 };
 
+bot.on('message', async (msg) => {
+  const chatId = msg.chat.id;
+
+  if( chatIds.indexOf(chatId) == -1 ){
+    bot.sendMessage(chatId, 'Отказано в доступе');
+  }else{
+    // if( msg.text == '/getAll'){
+      // var messages = await (new Promise((resolve, reject) => {
+      //   con.query(`select * from messages`, function (error, result) {
+      //     if (error) {
+      //       reject(error);
+      //     }
+      //     resolve(result);
+      //   });
+      // }));
+      //
+      // var text = 'Все заявки: ';
+      //
+      // for (let i = 0; i < messages.length; i++) {
+      //   if( !messages[i].subject ){
+      //     subject = 'Пусто';
+      //   }else{
+      //     subject = messages[i].subject;
+      //   }
+      //   text += `
+      // *Имя:* ${messages[i].username} *Фамилия:* ${messages[i].surname} *Тема:* ${subject} *E-mail:* ${messages[i].email} *Сообщение:* ${messages[i].message}`
+      // }
+      //
+      // bot.sendMessage(chatId, text, messageOptions);
+    // }
+
+    bot.sendMessage(chatId, 'Разрешено в доступе');
+  }
+});
+
 router.get('/', async function (req, res, next) {
   var advantage = await (new Promise((resolve, reject) => {
     con.query(`select * from advantage`, function (error, result) {
