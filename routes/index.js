@@ -97,12 +97,18 @@ router.post('/form', function (req, res) {
   if( !data.name || !data.surname || !data.email || !data.message ){
     res.send("<p style='font-size: 24px; color: red'>При отправке сообщения возникли ошибки. Заполните поля и попробуйте снова!</p>");
   }else{
+    let subject;
+    if( !data.subject ){
+      subject = 'Пусто';
+    }else{
+      subject = data.subject;
+    }
     for (let i = 0; i < chatIds.length; i++) {
       bot.sendMessage(chatIds[i],
     `*Новая заявка с сайта!*
       *Имя:* ${data.name} 
       *Фамилия:* ${data.surname} 
-      *Тема:* ${data.subject}
+      *Тема:* ${subject}
       *E-mail:* ${data.email} 
       *Сообщение:* ${data.message}`, messageOptions);
     }
